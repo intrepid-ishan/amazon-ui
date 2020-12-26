@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
-import './Login.css'
+import React, { useState } from 'react';
 import { Link, useHistory } from "react-router-dom";
-import { auth } from './firebase';
+import { auth } from '../../firebase/firebase';
+import './Login.css';
 
 function Login() {
     const history = useHistory();
@@ -14,13 +14,13 @@ function Login() {
         auth
             .signInWithEmailAndPassword(email, password)
             .then(auth => {
-                history.push('/')
+                history.push('/');
             })
-            .catch(error => alert(error.message))
-    }
+            .catch(error => alert(error.message));
+    };
 
     const register = e => {
-        e.preventDefault();//refreshing
+        e.preventDefault();
 
         auth
             .createUserWithEmailAndPassword(email, password)
@@ -30,12 +30,11 @@ function Login() {
                 console.log(auth);
 
                 if (auth) {
-                    history.push('/')
+                    history.push('/');
                 }
             })
-            .catch(error => alert(error.message))
-
-    }
+            .catch(error => alert(error.message));
+    };
 
     return (
         <div className='login'>
@@ -43,6 +42,7 @@ function Login() {
                 <img
                     className="login__logo"
                     src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/1024px-Amazon_logo.svg.png'
+                    alt='amazon'
                 />
             </Link>
 
@@ -67,7 +67,7 @@ function Login() {
                 <button onClick={register} className='login__registerButton'>Create your Amazon Account</button>
             </div>
         </div>
-    )
+    );
 }
 
-export default Login
+export default Login;

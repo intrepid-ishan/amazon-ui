@@ -1,6 +1,6 @@
 import React from 'react';
+import Product from './Product/Product';
 import "./Home.css";
-import Product from './Product';
 
 function Home() {
     return (
@@ -31,8 +31,6 @@ function Home() {
                     />
                 </div>
 
-
-
                 <div className="home__row">
                     <Product
                         key="3"
@@ -59,7 +57,6 @@ function Home() {
                         image="https://images-na.ssl-images-amazon.com/images/I/816ctt5WV5L._AC_SX385_.jpg"
                     />
                 </div>
-
 
                 <div className="home__row">
                     <Product
